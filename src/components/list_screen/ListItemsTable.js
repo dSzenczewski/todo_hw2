@@ -12,6 +12,7 @@ export class ListItemsTable extends Component {
                 {
                     this.props.todoList.items.map((todoItem)=>(
                         <ListItemCard 
+                            goItem={this.props.goItem}
                             key={todoItem.key}
                             listItem={todoItem} />
                     ))

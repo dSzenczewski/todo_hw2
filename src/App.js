@@ -44,6 +44,7 @@ class App extends Component {
       case AppScreen.LIST_SCREEN:            
         return <ListScreen
           goHome={this.goHome.bind(this)}
+          goItem={this.goItem.bind(this)}
           todoList={this.state.currentList} />;
       case AppScreen.ITEM_SCREEN:
         return <ItemScreen />;

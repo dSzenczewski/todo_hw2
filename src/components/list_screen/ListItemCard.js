@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 export class ListItemCard extends Component {
     render() {
         return (
-            <div className='list_item_card' 
-            onClick={this.props.goHome}>
+            <div className='list_item_card' onClick={this.props.goItem}>
                 <div className='list_item_card_description'>
                     {this.props.listItem.description}
                 </div>
