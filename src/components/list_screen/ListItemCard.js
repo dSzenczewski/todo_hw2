@@ -13,9 +13,15 @@ export class ListItemCard extends Component {
                 <div className='list_item_card_due_date'>
                     {this.props.listItem.due_date}
                 </div>
+                
                 <div className='list_item_card_completed'>
-                    {this.props.listItem.completed}
+                    {this.props.listItem.completed ? "Completed" : ""}
                 </div>
+
+                <div className='list_item_card_not_completed'>
+                {this.props.listItem.completed ? "" : "Pending"}
+                </div>
+                
             </div>
         )
     }
