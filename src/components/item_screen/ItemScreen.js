@@ -4,9 +4,40 @@ import PropTypes from 'prop-types';
 export class ItemScreen extends Component {
     render() {
         return (
-            <div>
+            <div id="todo_item" class="item_info">
+            <div id="list_item">
+                    <span id="list_item">Item: </span>
+                    <span id="list_item_index"></span>
+            </div>
+            <div id="list_description_container">
+                <div id="list_item_card_description" class="text_toolbar">
+                    <span id="LIST_ITEM_CARD_DESCRIPTION" class="info">Description:</span>
+                    <input type="text" id="list_description_textfield" class="textBox"/>
+                </div>
+                <div id="list_assigned_to_container" class="text_toolbar">
+                        <span id="LIST_ITEM_CARD_ASSIGNED_TO" class="info">Assigned to:</span>
+                        <input type="text" id="list_assigned_to_textfield" class="textBox"/>
+                        
+                </div>
+                <div id="list_date_container" class="text_toolbar">
+                        <span id="list_item_due_date" class="info">Due Date:</span>
+                        <input type="date" id="list_date_picker" class="textBox"/>
+                        
+                </div>
+                <div id="list_completed_container" class="text_toolbar">
+                        <span id="list_item_completed" class="info">Completed:</span>
+                        <input type="checkbox" id="list_checkbox" />
+                        
+                </div>
+                <div id="buttons_container">
+                        <button id="submit" onclick="window.todo.controller.submit();">Submit</button>
+                        <button onclick="window.todo.controller.cancel();">Cancel</button>
+                </div>
                 
             </div>
+            <div id="list_items_container">
+            </div>
+        </div>
         )
     }
 }
