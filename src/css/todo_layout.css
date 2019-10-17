@@ -78,11 +78,11 @@ left: 30%;
 #list_heading {}
 #list_trash {
     position: absolute;
-    left: 90%;
-    width: 9%;
+    left: 85%;
+    width: 15%;
     text-align: right;
     top: 5%;
-}
+  }
 #list_details_container {
     padding-left: 2%;
     display: grid;

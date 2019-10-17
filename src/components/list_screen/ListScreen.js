@@ -19,6 +19,41 @@ export class ListScreen extends Component {
             return this.props.todoList.owner;
         }
     }
+
+    setListName(text){
+        if (this.props.todoList) {
+            let name = this.props.todoList.name;
+            this.props.todoList.name = text;
+        }
+        else
+            return "";
+    }
+
+    setListOwner(text){
+        if (this.props.todoList) {
+            let owner = this.props.todoList.owner;
+            this.props.todoList.owner = text;
+        }
+        else
+            return "";
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+    
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeOwner = this.handleChangeOwner.bind(this);
+      }
+    
+      handleChangeName(event) {
+        this.setListName(event.target.value);
+      }
+
+      handleChangeOwner(event) {
+        this.setListOwner(event.target.value);
+      }
+    
     render() {
         return (
             <div id="todo_list">
@@ -28,16 +63,18 @@ export class ListScreen extends Component {
                     <div id="list_details_name_container" className="text_toolbar">
                         <span id="list_name_prompt">Name:</span>
                         <input 
-                            value={this.getListName()} 
+                            defaultValue={this.getListName()} 
                             type="text" 
-                            id="list_name_textfield" />
+                            id="list_name_textfield" 
+                            onChange = {this.handleChangeName}/>
                     </div>
                     <div id="list_details_owner_container" className="text_toolbar">
                         <span id="list_owner_prompt">Owner:</span>
                         <input 
-                            value={this.getListOwner()}
+                            defaultValue={this.getListOwner()}
                             type="text" 
-                            id="list_owner_textfield" />
+                            id="list_owner_textfield" 
+                            onChange = {this.handleChangeOwner}/>
                     </div>
                 </div>
                 <ListItemsTable goItem={this.props.goItem} todoList={this.props.todoList} />
