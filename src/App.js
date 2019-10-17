@@ -23,14 +23,19 @@ class App extends Component {
   }
 
   // Item screen
-  goItem = () => {
+  goItem = (index) => {
     this.setState({currentScreen: AppScreen.ITEM_SCREEN});
+    this.setState({key: index});
     //this.setState({currentList: todoListToLoad});
   }
 
   newList = () => {
     this.state.todoLists[this.state.todoLists.length] = new Object();
     //this.setState({todoLists: })
+  }
+
+  removeList = () => {
+    
   }
 
   loadList = (todoListToLoad) => {
@@ -51,10 +56,11 @@ class App extends Component {
         return <ListScreen
           goHome={this.goHome.bind(this)}
           goItem={this.goItem.bind(this)}
-          todoList={this.state.currentList} />;
+          todoList={this.state.currentList}
+          removeList={this.removeList.bind(this)} />;
       case AppScreen.ITEM_SCREEN:
         return <ItemScreen 
-        todoList={this.state.currentList}
+        todoItem={this.state.currentList.items[this.state.key]}
 
         />;
       default:

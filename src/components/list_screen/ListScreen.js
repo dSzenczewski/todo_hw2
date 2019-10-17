@@ -58,7 +58,7 @@ export class ListScreen extends Component {
         return (
             <div id="todo_list">
                 <ListHeading goHome={this.props.goHome} />
-                <ListTrash />
+                <ListTrash removeList={this.props.removeList}/>
                 <div id="list_details_container">
                     <div id="list_details_name_container" className="text_toolbar">
                         <span id="list_name_prompt">Name:</span>
