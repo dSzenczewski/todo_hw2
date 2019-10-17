@@ -30,28 +30,31 @@ class App extends Component {
   }
 
   newList = () => {
-    //this.state.todoLists[this.state.todoLists.length] = new Object();
-    //console.log(this.state.todoLists.length);
-    //this.setState({todoLists: })
+    
   }
 
   removeList = () => {
     console.log(this.state.currentList.items);
     document.getElementById("delete_popup").setAttribute("class", "onscreen");
-    //document.getElementById("delete_popup").setAttribute("class", "offscreen");
-    //this.setState(this.state.currentList.items, null);
-    //this.state.currentList = null;
-    //this.goHome();
-    //console.log(this.state.currentList.items);
   }
 
   removed = () => {
     document.getElementById("delete_popup").setAttribute("class", "offscreen");
+    let index = 0;
+    while(index < this.state.todoLists.length){
+      if(this.state.todoLists[index] === this.state.currentList){
+        //let tempArray = new Array[this.state.todoLists.length-1];
+        if (index >= 0)
+            this.state.todoLists.splice(index, 1);
+      }
+      index++;
+    }
+    
     this.goHome();
   }
 
   notRemoved = () => {
-    console.log(this.state.currentList);
+    console.log(this.state.todoLists.items);
     document.getElementById("delete_popup").setAttribute("class", "offscreen");
   }
 

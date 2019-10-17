@@ -54,9 +54,6 @@ export class ListScreen extends Component {
         this.setListOwner(event.target.value);
       }
 
-      nothing(){
-          console.log("no");
-      }
     
     render() {
         return (
