@@ -53,6 +53,10 @@ export class ListScreen extends Component {
       handleChangeOwner(event) {
         this.setListOwner(event.target.value);
       }
+
+      nothing(){
+          console.log("no");
+      }
     
     render() {
         return (
@@ -77,6 +81,18 @@ export class ListScreen extends Component {
                             onChange = {this.handleChangeOwner}/>
                     </div>
                 </div>
+                <div id="delete_popup" className="offscreen">
+                        <p>Delete list?
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            Are you sure you want to delete this list?
+                        </p>
+
+                        <button id="yes_delete" onClick={this.props.removed}>Yes</button>
+                        <button id="no_delete" onClick={this.props.notRemoved}>No</button>
+                        <p>The list will not be retreivable.</p>
+                    </div>
                 <ListItemsTable goItem={this.props.goItem} todoList={this.props.todoList} />
             </div>
         )

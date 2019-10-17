@@ -30,12 +30,29 @@ class App extends Component {
   }
 
   newList = () => {
-    this.state.todoLists[this.state.todoLists.length] = new Object();
+    //this.state.todoLists[this.state.todoLists.length] = new Object();
+    //console.log(this.state.todoLists.length);
     //this.setState({todoLists: })
   }
 
   removeList = () => {
-    
+    console.log(this.state.currentList.items);
+    document.getElementById("delete_popup").setAttribute("class", "onscreen");
+    //document.getElementById("delete_popup").setAttribute("class", "offscreen");
+    //this.setState(this.state.currentList.items, null);
+    //this.state.currentList = null;
+    //this.goHome();
+    //console.log(this.state.currentList.items);
+  }
+
+  removed = () => {
+    document.getElementById("delete_popup").setAttribute("class", "offscreen");
+    this.goHome();
+  }
+
+  notRemoved = () => {
+    console.log(this.state.currentList);
+    document.getElementById("delete_popup").setAttribute("class", "offscreen");
   }
 
   loadList = (todoListToLoad) => {
@@ -57,7 +74,9 @@ class App extends Component {
           goHome={this.goHome.bind(this)}
           goItem={this.goItem.bind(this)}
           todoList={this.state.currentList}
-          removeList={this.removeList.bind(this)} />;
+          removeList={this.removeList.bind(this)}
+          removed={this.removed.bind(this)} 
+          notRemoved={this.notRemoved.bind(this)} />;
       case AppScreen.ITEM_SCREEN:
         return <ItemScreen 
         todoItem={this.state.currentList.items[this.state.key]}
