@@ -90,7 +90,8 @@ export class ListScreen extends Component {
                         <button id="no_delete" onClick={this.props.notRemoved}>No</button>
                         <p>The list will not be retreivable.</p>
                     </div>
-                <ListItemsTable goItem={this.props.goItem} todoList={this.props.todoList} />
+                <ListItemsTable goItem={this.props.goItem} todoList={this.props.todoList} loadList={this.props.loadList}/>
+        
             </div>
         )
     }

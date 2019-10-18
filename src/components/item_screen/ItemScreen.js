@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
 export class ItemScreen extends Component {
+    submit = () => {
+
+        this.props.loadList(this.props.todoList);
+    }
+
+    cancel = () => {
+        
+        this.props.loadList(this.props.todoList);
+    }
     render() {
         return (
             <div id="todo_item" class="item_info">
@@ -30,8 +39,8 @@ export class ItemScreen extends Component {
                         
                 </div>
                 <div id="buttons_container">
-                        <button id="submit" onclick="window.todo.controller.submit();">Submit</button>
-                        <button onclick="window.todo.controller.cancel();">Cancel</button>
+                        <button id="submit" onClick={this.submit}>Submit</button>
+                        <button id="cancel" onClick={this.cancel}>Cancel</button>
                 </div>
                 
             </div>

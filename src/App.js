@@ -10,6 +10,7 @@ const AppScreen = {
   ITEM_SCREEN: "ITEM_SCREEN"
 }
 
+//var newItem = 0;
 class App extends Component {
   state = {
     currentScreen: AppScreen.HOME_SCREEN,
@@ -26,15 +27,19 @@ class App extends Component {
   goItem = (index) => {
     this.setState({currentScreen: AppScreen.ITEM_SCREEN});
     this.setState({key: index});
-    //this.setState({currentList: todoListToLoad});
+    //newItem = isNew;
+    //this.setState({isNew: isNew});
   }
 
   newList = () => {
-    
+    //console.log(this.state.todoLists.items);
+    //let newObject =  this.state.todoLists[0];
+    //newObject.
+    //this.state.todoLists[this.state.todoLists.length] = newObject;
+    //this.render();
   }
 
   removeList = () => {
-    console.log(this.state.currentList.items);
     document.getElementById("delete_popup").setAttribute("class", "onscreen");
   }
 
@@ -43,7 +48,6 @@ class App extends Component {
     let index = 0;
     while(index < this.state.todoLists.length){
       if(this.state.todoLists[index] === this.state.currentList){
-        //let tempArray = new Array[this.state.todoLists.length-1];
         if (index >= 0)
             this.state.todoLists.splice(index, 1);
       }
@@ -54,7 +58,7 @@ class App extends Component {
   }
 
   notRemoved = () => {
-    console.log(this.state.todoLists.items);
+    //console.log(this.state.todoLists.items);
     document.getElementById("delete_popup").setAttribute("class", "offscreen");
   }
 
@@ -79,11 +83,13 @@ class App extends Component {
           todoList={this.state.currentList}
           removeList={this.removeList.bind(this)}
           removed={this.removed.bind(this)} 
-          notRemoved={this.notRemoved.bind(this)} />;
+          notRemoved={this.notRemoved.bind(this)}
+          loadList={this.loadList.bind(this)} />;
       case AppScreen.ITEM_SCREEN:
         return <ItemScreen 
         todoItem={this.state.currentList.items[this.state.key]}
-
+        loadList={this.loadList.bind(this)} 
+        todoList={this.state.currentList}
         />;
       default:
         return <div>ERROR</div>;

@@ -19,7 +19,9 @@ body {
 
 .move_up0{
     background-color: var(--swatch-primary);
+    font-size: 40pt;
 }
+
 
 .item_info{
     font-size: 24pt;

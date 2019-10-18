@@ -75,7 +75,9 @@ left: 30%;
 .home_list_link {}
 
 /* LIST SCREEN CONTROLS */
-#list_heading {}
+#list_heading {
+    display: inline-block;
+}
 #list_trash {
     position: absolute;
     left: 85%;
@@ -134,6 +136,7 @@ left: 30%;
     left: 60%;
 }
 .list_item_card_toolbar {
+    font-size: 40pt;
     position: absolute;
     left: 85%;
     width: 15%;
@@ -184,4 +187,10 @@ left: 30%;
 }
 .item_input {
     grid-column: 3 / 4;
+}
+
+.new_item{
+    font-size: 40pt;
+    position: relative;
+    left: 50%;
 }
