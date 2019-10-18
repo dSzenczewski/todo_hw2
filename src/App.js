@@ -34,8 +34,13 @@ class App extends Component {
 
   newList = () => {
     //console.log(this.state.todoLists.items);
-    //let newObject =  this.state.todoLists[0];
-    //newObject.
+    let newObject = {};
+    newObject.items = [];
+    newObject.key = this.state.todoLists.length;
+    newObject.name = "Unknown";
+    newObject.owner = "Unknown";
+    this.state.todoLists.push(newObject);
+    this.loadList(newObject);
     //this.state.todoLists[this.state.todoLists.length] = newObject;
     //this.render();
   }
