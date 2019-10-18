@@ -24,9 +24,10 @@ class App extends Component {
   }
 
   // Item screen
-  goItem = (index) => {
+  goItem = (index, isNew) => {
     this.setState({currentScreen: AppScreen.ITEM_SCREEN});
     this.setState({key: index});
+    this.setState({newItem: isNew});
     //newItem = isNew;
     //this.setState({isNew: isNew});
   }
@@ -90,6 +91,7 @@ class App extends Component {
         todoItem={this.state.currentList.items[this.state.key]}
         loadList={this.loadList.bind(this)} 
         todoList={this.state.currentList}
+        newItem={this.state.newItem}
         />;
       default:
         return <div>ERROR</div>;

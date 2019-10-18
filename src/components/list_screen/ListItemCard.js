@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class ListItemCard extends Component {
     getIndex(){
-        this.props.goItem(this.props.listItem.key);
+        this.props.goItem(this.props.listItem.key, false);
     }
 
     moveUp(e){

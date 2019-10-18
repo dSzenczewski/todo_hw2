@@ -11,7 +11,7 @@ export class ListItemsTable extends Component {
         item.key = this.props.todoList.items.length;
         this.props.todoList.items.push(item);
 
-        this.props.goItem(item.key);
+        this.props.goItem(item.key, true);
     }
     render() {
         return (

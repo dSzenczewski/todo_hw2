@@ -8,7 +8,11 @@ export class ItemScreen extends Component {
     }
 
     cancel = () => {
-        
+        console.log(this.props);
+        if(this.props.newItem){
+            
+            this.props.todoList.items.pop();
+        }
         this.props.loadList(this.props.todoList);
     }
     render() {
